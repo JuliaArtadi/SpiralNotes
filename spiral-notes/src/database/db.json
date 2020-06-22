@@ -1,0 +1,25 @@
+{
+  "notes": [
+    {
+      "id": 1 ,
+      "title": "Latam" ,
+      "category": "Sny",
+      "content": "Latam nad lasami",
+      "date": "21/06/2020"
+    },
+    {
+      "id": 2 ,
+      "title": "Myśl pozytywnie" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz",
+      "date": "21/06/2020"
+    },
+    {
+      "id": 3 ,
+      "title": "Piknik" ,
+      "category": "Sny",
+      "content": "Jestem na pikniku nad jeziorem z Olą",
+      "date": "21/06/2020"
+    }
+  ]
+}
