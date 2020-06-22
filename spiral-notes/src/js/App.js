@@ -1,12 +1,10 @@
 import React from 'react';
 import '../scss/App.scss';
-import {DatePicker} from "./components/DatePicker";
+import {PickDate} from "./components/PickDate";
 import {
     HashRouter,
     Route,
-    Link,
     Switch,
-    NavLink,
 } from 'react-router-dom';
 import {Example} from "./components/example";
 
@@ -15,7 +13,7 @@ function App() {
    <HashRouter>
        <div className={"App"}>
        <Switch>
-           <Route exact path='/' component={DatePicker}/>
+           <Route exact path='/' component={PickDate}/>
            <Route path='/ex' component={Example}/>
        </Switch>
        </div>

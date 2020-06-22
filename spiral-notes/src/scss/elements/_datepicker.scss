@@ -1,3 +1,19 @@
-.date-picker {
-  padding: 20px;
+.pick-date {
+  width: 90px;
+  text-align: center;
+}
+
+.date-arrow {
+  background-color: white;
+  border: 1px solid rgb(118, 118, 118);
+  cursor: pointer;
+  height: 21px;
+
+  &:first-child {
+    border-right: none;
+  }
+
+  &:last-child {
+    border-left: none;
+  }
 }
