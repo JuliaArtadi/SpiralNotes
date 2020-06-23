@@ -9,11 +9,9 @@
   cursor: pointer;
   height: 21px;
 
-  &:first-child {
-    border-right: none;
+  &:focus {
+    outline: #acd5e0 solid 1px;
+    outline-offset: -2px;
   }
 
-  &:last-child {
-    border-left: none;
-  }
 }

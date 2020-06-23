@@ -1,0 +1,9 @@
+.pick-cycle {
+  height: 21px;
+  margin-left: 30px;
+
+  &:focus {
+    outline: #acd5e0 solid 1px;
+    outline-offset: -2px;
+  }
+}
