@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import DatePicker from "react-datepicker/es";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 
 
-export const PickDate = () => {
+export const PickDate = ({method: changeGlobalDate}) => {
     const [startDate, setStartDate] = useState(new Date());
 
     const handlePrevDay = () => {
@@ -13,6 +13,14 @@ export const PickDate = () => {
             return yesterday;
         });
     }
+
+    useEffect(() => {
+        if (typeof changeGlobalDate === "function") {
+            changeGlobalDate(startDate);
+
+        }
+    })
+
 
     const handleNextDay = () => {
         setStartDate(today => {

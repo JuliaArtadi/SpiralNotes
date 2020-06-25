@@ -5,21 +5,32 @@
       "title": "Latam" ,
       "category": "Sny",
       "content": "Latam nad lasami",
-      "date": "21/06/2020"
+      "date": "Wed Jun 17 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 25
     },
     {
       "id": 2 ,
       "title": "Myśl pozytywnie" ,
       "category": "Afirmacje",
       "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz",
-      "date": "21/06/2020"
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
     },
     {
       "id": 3 ,
+      "title": "Myśl pozytywnie" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
+    },
+    {
+      "id": 4 ,
       "title": "Piknik" ,
       "category": "Sny",
       "content": "Jestem na pikniku nad jeziorem z Olą",
-      "date": "21/06/2020"
+      "date": "Sun Aug 16 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 25
     }
   ]
 }
