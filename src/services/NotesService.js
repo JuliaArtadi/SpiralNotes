@@ -1,5 +1,5 @@
 export class NotesService {
-    API_URL = "http://localhost:3000";
+   API_URL = "http://localhost:3000";
 
     getNotes = (successCallback, errorCallback) => {
         fetch(`${this.API_URL}/notes`, {

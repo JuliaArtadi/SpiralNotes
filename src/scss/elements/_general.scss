@@ -1,3 +1,26 @@
 .App {
-  background-color: yellow;
+  background-color: rgba(223, 239, 234, 0.25);
+  height: 100vh;
+}
+
+.logo {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: -20px;
+
+}
+
+.app-header {
+  position: relative;
+  //background-image: url("./Logo.png");
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+overflow: hidden;
+  height: 50px;
+}
+.site-name {
+  z-index: 2;
+  text-shadow: 0 0 5px white, 0 0 15px white, 0 0 15px white, 0 0 20px white;
 }
