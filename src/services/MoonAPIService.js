@@ -10,8 +10,8 @@ export class MoonAPIService {
             month 		:currDate.getMonth() + 1,
             year  		:currDate.getFullYear(),
             size		:50,
-            lightColor	:"#FFFF88",
-            shadeColor	:"#111111",
+            lightColor	:"#f8f8b1",
+            shadeColor	:"#494b58",
             sizeQuarter	:20,
             texturize	:false
         }

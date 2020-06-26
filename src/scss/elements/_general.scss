@@ -3,13 +3,12 @@
   height: 100vh;
 }
 
-.logo {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  right: -20px;
-
+body {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
+
+
 
 .app-header {
   position: relative;
@@ -23,4 +22,8 @@ overflow: hidden;
 .site-name {
   z-index: 2;
   text-shadow: 0 0 5px white, 0 0 15px white, 0 0 15px white, 0 0 20px white;
+}
+.container {
+  display: grid;
+  grid-template-columns: 190px auto;
 }
