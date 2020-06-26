@@ -14,26 +14,25 @@ export const Notes = ({phase, date: currDate}) => {
     useEffect(() => {
         if (phase !== null && phase.phase !== phaseInfo) {
             setPhaseInfo(phase.phase)
-            }
-            if (currDate !== null && currDate !== date) {
-                setDate(currDate)
         }
-            if (date !== null && phaseInfo !== null) {
-                setTodayIndex(PhaseIndex(phaseInfo, date))
+        if (currDate !== null && currDate !== date) {
+            setDate(currDate)
+        }
+        if (date !== null && phaseInfo !== null) {
+            setTodayIndex(PhaseIndex(phaseInfo, date))
         }
     })
-    console.log(todayIndex);
 
     useEffect(() => {
         notesList.getNotes(data => setNotes(data), err => console.log(err))
     }, [])
 
     if (notes === null || todayIndex === null) return <div>Ładuję notatki...</div>
-if (notes.filter(note => note.phaseIndex === todayIndex).length === 0) return <div>Brak notatek</div>
+    if (notes.filter(note => note.phaseIndex === todayIndex).length === 0) return <div>Brak notatek</div>
 
     return (
         <>
-            <ul>
+            <ul className={"notes__list"}>
                 {notes.filter(note => note.phaseIndex === todayIndex).map(note => <Note key={note.id} content={note}/>)}
             </ul>
 

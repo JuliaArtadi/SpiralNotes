@@ -18,9 +18,9 @@
     },
     {
       "id": 3 ,
-      "title": "Myśl pozytywnie" ,
+      "title": "Hakuna matata" ,
       "category": "Afirmacje",
-      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! Wszystko będzie dobrze, jeśli tylko w to uwierzysz! ",
       "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
       "phaseIndex": 5
     },
@@ -31,6 +31,54 @@
       "content": "Jestem na pikniku nad jeziorem z Olą",
       "date": "Sun Aug 16 2020 16:35:45 GMT+0200 (Central European Summer Time)",
       "phaseIndex": 25
+    },
+    {
+      "id": 5 ,
+      "title": "Hakuna matata" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz!",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
+    },
+    {
+      "id": 6 ,
+      "title": "Hakuna matata" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz!",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
+    },
+    {
+      "id": 7 ,
+      "title": "Hakuna matata" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz!",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
+    },
+    {
+      "id": 8 ,
+      "title": "Hakuna matata" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz!",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
+    },
+    {
+      "id": 9 ,
+      "title": "Hakuna matata" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz!",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
+    },
+    {
+      "id": 10 ,
+      "title": "Hakuna matata" ,
+      "category": "Afirmacje",
+      "content": "Wszystko będzie dobrze, jeśli tylko w to uwierzysz!",
+      "date": "Fri Jun 26 2020 16:35:45 GMT+0200 (Central European Summer Time)",
+      "phaseIndex": 5
     }
   ]
 }

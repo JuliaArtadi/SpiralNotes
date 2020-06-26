@@ -24,15 +24,18 @@ export const PhaseInfo = ({date, method}) => {
     }
 
     useEffect(() => {
-        if (date !== currDate) handleChangeDate();
-    },)
+        handleChangeDate();
+    }, [date])
 
     if (phase === null) return <h1>loading data...</h1>
 
     return (
         <>
-            <h1>{phase.phase[currDate.getDate()].npWidget}</h1>
-            <div dangerouslySetInnerHTML={{__html: phase.phase[currDate.getDate()].svg}}></div>
+            <div className="phase__container">
+                <div dangerouslySetInnerHTML={{__html: phase.phase[currDate.getDate()].svg}}></div>
+                <h1>{phase.phase[currDate.getDate()].npWidget}</h1>
+            </div>
+
         </>
     )
 

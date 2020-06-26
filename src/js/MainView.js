@@ -20,11 +20,11 @@ export const MainView = () => {
         setDate(newDate);
     }
 
-    useEffect(() => {
-        const handleResize = () => {
-            setScreenWidth(window.innerWidth);
-        }
+    const handleResize = () => {
+        setScreenWidth(window.innerWidth);
+    }
 
+    useEffect(() => {
         window.addEventListener('resize', handleResize)
 
         return () => {
@@ -32,16 +32,19 @@ export const MainView = () => {
         }
     }, [])
 
+
     if (screenWidth >= 500) {
         return (
             <>
                 <Menu/>
-                <Nav>
-                    <PickDate method={handleChangeDate}/>
-                    <PickCycle/>
-                    <PhaseInfo date={date} method={handleChangePhase}/>
-                </Nav>
-                <Notes date={date} phase={phase}/>
+               <div className="container">
+                   <Nav>
+                       <PickDate method={handleChangeDate}/>
+                       <PickCycle/>
+                       <PhaseInfo date={date} method={handleChangePhase}/>
+                   </Nav>
+                   <Notes date={date} phase={phase}/>
+               </div>
             </>
         )
     }

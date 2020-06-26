@@ -32,14 +32,16 @@ export const PickDate = ({method: changeGlobalDate}) => {
 
     return (
         <>
-            <button className={"date-arrow"} onClick={handlePrevDay}>{"<"}</button>
-            <DatePicker
-                className={"pick-date"}
-                dateFormat="dd/MM/yyyy"
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-            />
-            <button className={"date-arrow"} onClick={handleNextDay}>{">"}</button>
+            <div className="date__container">
+                <button className={"date-arrow side-style"} onClick={handlePrevDay}>{"<"}</button>
+                <DatePicker
+                    className={"pick-date side-style"}
+                    dateFormat="dd/MM/yyyy"
+                    selected={startDate}
+                    onChange={date => setStartDate(date)}
+                />
+                <button className={"date-arrow side-style"} onClick={handleNextDay}>{">"}</button>
+            </div>
         </>
     );
 };

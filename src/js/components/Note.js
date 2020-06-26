@@ -10,11 +10,11 @@ export const Note = ({content}) => {
     if (note === null) return null;
 
     return (
-        <li>
-            <h3>{note.title}</h3>
-            <p>{note.content}</p>
-            <p>{new Date(note.date).toLocaleDateString()}</p>
-            <p>{note.category}</p>
+        <li className={"note__card"}>
+            <h3 className={"note__title"}>{note.title}</h3>
+            <p className={"note__content"}>{note.content.slice(0, 100)}</p>
+            <p className={"note__date"}>{new Date(note.date).toLocaleDateString()}</p>
+            <p className={"note__category"}>{note.category}</p>
         </li>
     )
 }
