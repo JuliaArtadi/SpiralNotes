@@ -32,6 +32,7 @@ export const PickDate = ({method: changeGlobalDate}) => {
 
     return (
         <>
+            <p>Wybierz datę</p>
             <div className="date__container">
                 <button className={"date-arrow side-style"} onClick={handlePrevDay}>{"<"}</button>
                 <DatePicker

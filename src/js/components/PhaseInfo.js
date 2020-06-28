@@ -32,8 +32,9 @@ export const PhaseInfo = ({date, method}) => {
     return (
         <>
             <div className="phase__container">
+                <div>Faza księżyca:</div>
                 <div dangerouslySetInnerHTML={{__html: phase.phase[currDate.getDate()].svg}}></div>
-                <h1>{phase.phase[currDate.getDate()].npWidget}</h1>
+                <div className={"phase__text"}>{phase.phase[currDate.getDate()].npWidget}</div>
             </div>
 
         </>
