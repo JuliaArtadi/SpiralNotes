@@ -1,17 +1,35 @@
+#root {
+  background-color: #f3f3f3;
+}
+
 .side-nav {
-  width: 150px;
-  height: calc(100vh - 84px);
-  background-color: #acd5e0;
-  padding: 20px;
+  width: 200px;
+
+background-color: #fafafa;
+  //background-image: linear-gradient(to left, #d4d4d4, white);  padding: 20px;
+
+}
+.side__element-phase {
+
 
 }
 
-.side__elements {
+.side__element-date {
+
+}
+
+.side__element {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 300px;
+margin: 30px 20px;
+  padding: 15px 10px;
+  //border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #b6b6b6, 3px 3px 5px #b3b3b3, 0 0 2px #b3b3b3;
+  background-color: #e6f3fd;
+  color: #474747;
 }
 
 .logo-container {
@@ -20,22 +38,31 @@
   align-items: center;
 }
 
+.header__background {
+  box-shadow: 1px 1px 1px #b6b6b6, 3px 3px 5px #b3b3b3;
+  position: relative;
+z-index: 2;
+  background-color: #f6f6d7;
+  //border-bottom: 1px solid black;
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 padding: 10px 30px;
-  background-color: #95cddc;
-  overflow: hidden;
+
   position: relative;
 }
 
 .logo {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  margin-right: -15px;
-  left: -20px;
+  width: 50px;
+  height: 50px;
+  //margin-right: -15px;
+  left: 40px;
+  top: -5px;
 
 }
 
@@ -43,7 +70,7 @@ padding: 10px 30px;
   font-size: 24px;
   font-weight: 300;
   z-index: 1;
-  padding-left: 35px;
+  padding-left: 53px;
 }
 
 .menu {
@@ -51,15 +78,26 @@ padding: 10px 30px;
 }
 
 .menu__elem {
-  padding-left: 30px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #474747;
+  position: relative;
+
 }
 
-.side-style {
-  background-color: rgba(255, 255, 255, 0.46);
-  box-shadow:  0 3px 1px rgba(0, 0, 0, 0.32);
-  border: none;
-  //border-bottom: 1px solid #001244;
-  outline: none;
-  border-radius: 3px;
+.is-active {
+//text-shadow: 0 0 1px #ea660d;
+  color: #000000;
+
+  &:before {
+    content: ">";
+    position: absolute;
+    left: 5px;
+  }
+}
+
+
+
+@media (min-width: 600px) {
 
 }

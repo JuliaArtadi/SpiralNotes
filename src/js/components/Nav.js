@@ -6,7 +6,7 @@ export const Nav = ({children}) => {
         <>
             <nav className={"side-nav"}>
                 <div className="side__elements">
-                    {children}
+
                 </div>
             </nav>
         </>

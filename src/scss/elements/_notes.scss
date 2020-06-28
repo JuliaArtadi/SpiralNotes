@@ -1,27 +1,40 @@
+
+
 .notes__list {
   display: grid; /* 1 */
-  grid-template-columns: auto;
-  grid-gap: 1rem; /* 3 */
+  grid-template-columns: 100%;
+  grid-gap: 2rem; /* 3 */
   justify-content: space-around; /* 4 */
   padding: 30px;
+
   width: 90%;
 
-  @media (min-width: 1000px) {
-    grid-template-columns: auto auto;
+  @media (min-width: 1200px) {
+    grid-template-columns: 50% 50%;
   }
 
-  @media (min-width: 1400px) {
-    grid-template-columns: auto auto auto;
-  }
+
 }
 
 .note__card {
-background-color: #95cddc;
-  box-shadow: 1px 1px 1px black;
-  margin: 10px;
-  height: 150px;
-  padding: 20px;
+  @extend .side__element;
+  padding-top: 0;
+align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 1.7em;
+  height: 100px;
+  overflow: hidden;
+  margin: 0;
 }
+
+.note__smalltxt {
+  color: #b6b6b6;
+  display: flex;
+  justify-content: space-between;
+width: 100%;
+  font-size: 14px;
+}
+
 .note__title {
 font-size: 20px;
 }
@@ -33,4 +46,8 @@ font-size: 20px;
 }
 .note__category {
 
+}
+.no-notes__info {
+  margin: 100px;
+  text-align: center;
 }

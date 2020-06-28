@@ -1,6 +1,6 @@
-.App {
-  background-color: rgba(223, 239, 234, 0.25);
-  height: 100vh;
+.container-main {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 body {
@@ -8,8 +8,15 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  background-color: #fafafa;
+  flex-grow: 2;
+}
 
-
+link {
+  text-decoration: none;
+  color: black;
+}
 .app-header {
   position: relative;
   //background-image: url("./Logo.png");
@@ -19,11 +26,12 @@ body {
 overflow: hidden;
   height: 50px;
 }
-.site-name {
-  z-index: 2;
-  text-shadow: 0 0 5px white, 0 0 15px white, 0 0 15px white, 0 0 20px white;
-}
-.container {
-  display: grid;
-  grid-template-columns: 190px auto;
+
+
+.container-grid {
+  display: flex;
+  height: calc(100vh - 44px);
+  //display: grid;
+  //grid-template-columns: 190px auto;
+  //grid-gap: 0;
 }
