@@ -6,7 +6,6 @@ export const PhaseInfo = ({date, method}) => {
     const [currDate, setCurrDate] = useState(date);
     const phaseInfo = new MoonAPIService();
 
-
     const handleChangeDate = () => {
         setCurrDate(prev => {
             if (phase === null || prev.getMonth() !== date.getMonth()) handleChangePhase();
@@ -33,10 +32,9 @@ export const PhaseInfo = ({date, method}) => {
         <>
             <div className="phase__container">
                 <div>Faza księżyca:</div>
-                <div dangerouslySetInnerHTML={{__html: phase.phase[currDate.getDate()].svg}}></div>
+                <div dangerouslySetInnerHTML={{__html: phase.phase[currDate.getDate()].svg}}> </div>
                 <div className={"phase__text"}>{phase.phase[currDate.getDate()].npWidget}</div>
             </div>
-
         </>
     )
 

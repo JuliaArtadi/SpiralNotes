@@ -14,8 +14,15 @@
   align-items: center;
   justify-content: space-between;
   height: 110px;
+  width: 150px;
 }
 
 .phase__text {
   font-size: 14px;
+  text-align: center;
+}
+
+svg g a circle {
+  pointer-events: none !important;
+  cursor: initial !important;
 }

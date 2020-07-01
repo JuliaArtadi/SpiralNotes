@@ -1,20 +1,16 @@
-import React, {cloneElement, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {PickDate} from "./components/PickDate";
-import {PickCycle} from "./components/PickCycle";
 import {PhaseInfo} from "./components/PhaseInfo";
 import {Notes} from "./components/Notes";
 import {Menu} from "./components/Menu";
-import {Nav} from "./components/Nav";
 import {ButtonAdd} from "./components/ButtonAdd";
 import {AddNote} from "./components/AddNote";
 import {NotesService} from "../services/NotesService";
-import {NoteView} from "./components/NoteView";
-import {BrowserRouter, HashRouter, Route, Switch} from "react-router-dom";
+import {EditNote} from "./components/EditNote";
+import {HashRouter, Route, Switch} from "react-router-dom";
 import {Header} from "./components/Header";
-import {Note} from "./components/Note";
 
-
-export const MainView = ({children}) => {
+export const MainView = () => {
     const [date, setDate] = useState(new Date());
     const [phase, setPhase] = useState(null);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -75,67 +71,55 @@ export const MainView = ({children}) => {
         }
     }, [])
 
-
     if (screenWidth >= 600) {
         return (
             <>
-                <Header>
-                    <Menu/>
-                </Header>
-                <div className="container-grid container-main">
-                    <main>
-                        <HashRouter>
+                <HashRouter>
+                    <Header>
+                        <Menu/>
+                    </Header>
+                    <div className="container container-main">
+                        <main>
                             <Switch>
                                 <Route exact path='/'
                                        component={() => <Notes date={date} phase={phase} notesList={notes}/>}/>
                                 <Route path='/add-note'
                                        component={() => <AddNote date={date} phase={phase} saveNote={handleAddNote}/>}/>
-                                <Route path='/notes/:id' component={() => <NoteView editNote={handleEditNote}
+                                <Route path='/notes/:id' component={() => <EditNote editNote={handleEditNote}
                                                                                     deleteNote={handleDeleteNote}/>}/>
                             </Switch>
-                        </HashRouter>
-                        {/*{children}*/}
-                        {/*{cloneElement(children[0], { phase: phase, date, notes, handleaddnote: handleAddNote})}*/}
-                        {/*{cloneElement(children[1], { phase, date, notes, handleaddnote: handleAddNote})}*/}
-                        {/*{cloneElement(children[2], { phase, date, notes, handleaddnote: handleAddNote})}*/}
-                        {/*<AddNote date={date} phase={phase} saveNote={handleAddNote}/>*/}
-                        {/*<NoteView editNote={handleEditNote} deleteNote={handleDeleteNote()}/>*/}
-                        {/*<Notes date={date} phase={phase} notesList={notes}/>*/}
-                    </main>
-                    <div className={"placeholder-nav"}></div>
-                    <nav className={"side-nav"}>
-                        <div className="side__element side__element-date">
-                            <PickDate method={handleChangeDate}/>
-                            <PhaseInfo date={date} method={handleChangePhase}/>
-                        </div>
-                    </nav>
-                </div>
+                        </main>
+                        <aside className={"placeholder-nav"}> </aside>
+                        <nav className={"side-nav"}>
+                            <div className="side__element">
+                                <PickDate method={handleChangeDate}/>
+                                <PhaseInfo date={date} method={handleChangePhase}/>
+                            </div>
+                        </nav>
+                    </div>
+                </HashRouter>
             </>
         )
     }
 
     return (
         <>
-            <Header/>
-            <div className="side__element side-element-app">
-                <PickDate method={handleChangeDate}/>
-                <PhaseInfo date={date} method={handleChangePhase}/>
-            </div>
-            <BrowserRouter>
-                <Route exact path='/'
-                       component={() => <Notes date={date} phase={phase} notesList={notes}/>}/>
-                <Route path='/add-note'
-                       component={() => <AddNote date={date} phase={phase} saveNote={handleAddNote}/>}/>
-                <Route path='/notes/:id' component={() => <NoteView editNote={handleEditNote}
-                                                                    deleteNote={handleDeleteNote}/>}/>
-            </BrowserRouter>
-            {/*<AddNote date={date} phase={phase} saveNote={handleAddNote}>*/}
-            {/*    <button className={"button button-back"}>Powrót</button>*/}
-            {/*</AddNote>*/}
-            {/*<Notes date={date} phase={phase} notesList={notes}>*/}
-            {/*    <ButtonAdd/>*/}
-            {/*</Notes>*/}
-            {/*    <NoteView editNote={handleEditNote} deleteNote={handleDeleteNote()}/>*/}
+            <HashRouter>
+                <Header/>
+                <section className="side__element">
+                    <PickDate method={handleChangeDate}/>
+                    <PhaseInfo date={date} method={handleChangePhase}/>
+                </section>
+                <main>
+                    <Route exact path='/'
+                           component={() => <Notes date={date} phase={phase} notesList={notes}
+                                                   children={<ButtonAdd/>}/>}/>
+                    <Route path='/add-note'
+                           component={() => <AddNote date={date} phase={phase} saveNote={handleAddNote}/>}/>
+                    <Route path='/notes/:id' component={() => <EditNote editNote={handleEditNote}
+                                                                        deleteNote={handleDeleteNote}/>}/>
+                </main>
+            </HashRouter>
         </>
     )
 }

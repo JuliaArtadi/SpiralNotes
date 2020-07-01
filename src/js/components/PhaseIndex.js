@@ -18,7 +18,7 @@ export const PhaseIndex = (phase, date) => {
         return 6;
     } else if (day.phaseName === "Pierwszy kwartał") {
         return 7;
-    }else if (day.phaseName === "Przybywający" && day.lighting >= 50 && day.lighting <= 65) {
+    } else if (day.phaseName === "Przybywający" && day.lighting >= 50 && day.lighting <= 65) {
         return 8;
     } else if (day.phaseName === "Przybywający" && day.lighting > 65 && day.lighting <= 75) {
         return 9;
@@ -59,4 +59,4 @@ export const PhaseIndex = (phase, date) => {
     } else if (day.phaseName === "zanikający" && day.lighting >= 0 && day.lighting < 8) {
         return 27;
     }
-        }
+}

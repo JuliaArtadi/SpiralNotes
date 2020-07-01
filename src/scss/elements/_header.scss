@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: relative;
+
+  &__background {
+    box-shadow: 1px 1px 1px #b6b6b6, 3px 3px 5px #b3b3b3;
+    z-index: 2;
+    background-color: #f6f6d7;
+    overflow: hidden;
+  }
+}
+
+.logo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 40px;
+  top: -5px;
+
+  &-text {
+    font-size: 24px;
+    font-weight: 300;
+    z-index: 1;
+    padding-left: 53px;
+    color: black;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__elem {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #474747;
+    position: relative;
+  }
+}
+
+.is-active {
+  color: #000000;
+
+  &:before {
+    content: ">";
+    position: absolute;
+    left: 5px;
+  }
+}
