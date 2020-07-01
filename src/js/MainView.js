@@ -9,7 +9,9 @@ import {ButtonAdd} from "./components/ButtonAdd";
 import {AddNote} from "./components/AddNote";
 import {NotesService} from "../services/NotesService";
 import {NoteView} from "./components/NoteView";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Switch} from "react-router-dom";
+import {Header} from "./components/Header";
+import {Note} from "./components/Note";
 
 
 export const MainView = ({children}) => {
@@ -26,7 +28,25 @@ export const MainView = ({children}) => {
             ])
         )
     }
-console.log(children);
+
+    const handleDeleteNote = (id) => {
+        for (let i = 0; i < notes.length; i++) {
+            let note = notes[i];
+            if (note.id === id) {
+                notes.splice(i, 1);
+            }
+        }
+    }
+
+    const handleEditNote = (newNote) => {
+        for (let i = 0; i < notes.length; i++) {
+            let note = notes[i];
+            if (newNote.id === note.id) {
+                notes[i] = newNote;
+            }
+        }
+    }
+
     const handleChangePhase = (newPhase) => {
         setPhase(newPhase);
     }
@@ -56,54 +76,66 @@ console.log(children);
     }, [])
 
 
-    if (screenWidth >= 500) {
+    if (screenWidth >= 600) {
         return (
             <>
-
-                   <Menu/>
-                   <div className="container-grid container-main">
-
-                       <main>
-                           {/*<BrowserRouter>*/}
-
-
-                           {/*            <Route exact path='/' render={props => <Notes />}/>*/}
-                           {/*            <Route exact path='/add-note' component={AddNote}/>*/}
-                           {/*            <Route path='/notes/:id' component={NoteView}/>*/}
-
-                           {/*   */}
-                           {/*</BrowserRouter>*/}
-                           {/*{children}*/}
-                           {/*{cloneElement(children[0], { phase: phase, date, notes, handleaddnote: handleAddNote})}*/}
-                           {/*{cloneElement(children[1], { phase, date, notes, handleaddnote: handleAddNote})}*/}
-                           {/*{cloneElement(children[2], { phase, date, notes, handleaddnote: handleAddNote})}*/}
-                           {/*<AddNote date={date} phase={phase} saveNote={handleAddNote}/>*/}
-                           <Notes date={date} phase={phase} notesList={notes}/>
-                           {/*<NoteView/>*/}
-                       </main>
-                       <nav className={"side-nav"}>
-                           <div className="side__element side__element-date">
-                               <PickDate method={handleChangeDate}/>
-                               {/*</div>*/}
-                               {/*<div className="side__element side__element-phase">*/}
-                               <PhaseInfo date={date} method={handleChangePhase}/>
-                           </div>
-                       </nav>
-                   </div>
-
+                <Header>
+                    <Menu/>
+                </Header>
+                <div className="container-grid container-main">
+                    <main>
+                        <HashRouter>
+                            <Switch>
+                                <Route exact path='/'
+                                       component={() => <Notes date={date} phase={phase} notesList={notes}/>}/>
+                                <Route path='/add-note'
+                                       component={() => <AddNote date={date} phase={phase} saveNote={handleAddNote}/>}/>
+                                <Route path='/notes/:id' component={() => <NoteView editNote={handleEditNote}
+                                                                                    deleteNote={handleDeleteNote}/>}/>
+                            </Switch>
+                        </HashRouter>
+                        {/*{children}*/}
+                        {/*{cloneElement(children[0], { phase: phase, date, notes, handleaddnote: handleAddNote})}*/}
+                        {/*{cloneElement(children[1], { phase, date, notes, handleaddnote: handleAddNote})}*/}
+                        {/*{cloneElement(children[2], { phase, date, notes, handleaddnote: handleAddNote})}*/}
+                        {/*<AddNote date={date} phase={phase} saveNote={handleAddNote}/>*/}
+                        {/*<NoteView editNote={handleEditNote} deleteNote={handleDeleteNote()}/>*/}
+                        {/*<Notes date={date} phase={phase} notesList={notes}/>*/}
+                    </main>
+                    <div className={"placeholder-nav"}></div>
+                    <nav className={"side-nav"}>
+                        <div className="side__element side__element-date">
+                            <PickDate method={handleChangeDate}/>
+                            <PhaseInfo date={date} method={handleChangePhase}/>
+                        </div>
+                    </nav>
+                </div>
             </>
         )
     }
 
     return (
         <>
-
-            <PickDate method={handleChangeDate}/>
-            <PickCycle/>
-            <PhaseInfo date={date} method={handleChangePhase}/>
-            <ButtonAdd/>
-            {children}
+            <Header/>
+            <div className="side__element side-element-app">
+                <PickDate method={handleChangeDate}/>
+                <PhaseInfo date={date} method={handleChangePhase}/>
+            </div>
+            <BrowserRouter>
+                <Route exact path='/'
+                       component={() => <Notes date={date} phase={phase} notesList={notes}/>}/>
+                <Route path='/add-note'
+                       component={() => <AddNote date={date} phase={phase} saveNote={handleAddNote}/>}/>
+                <Route path='/notes/:id' component={() => <NoteView editNote={handleEditNote}
+                                                                    deleteNote={handleDeleteNote}/>}/>
+            </BrowserRouter>
+            {/*<AddNote date={date} phase={phase} saveNote={handleAddNote}>*/}
+            {/*    <button className={"button button-back"}>Powrót</button>*/}
+            {/*</AddNote>*/}
+            {/*<Notes date={date} phase={phase} notesList={notes}>*/}
+            {/*    <ButtonAdd/>*/}
+            {/*</Notes>*/}
+            {/*    <NoteView editNote={handleEditNote} deleteNote={handleDeleteNote()}/>*/}
         </>
     )
-
 }

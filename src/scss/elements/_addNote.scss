@@ -1,0 +1,109 @@
+.add-note__header {
+display: none;
+  padding: 0 30px;
+font-size: 16px;
+
+  @media (min-width: 600px) {
+    display: block;
+    padding: 20px 0 0 30px;
+    font-size: 20px;
+  }
+}
+
+.add-note__form {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+
+  @media (min-width: 500px) {
+    padding-top: 30px;
+  }
+
+  input, textarea {
+    display: block;
+    padding: 5px;
+
+    &:focus {
+      outline: #acd5e0 solid 1px;
+      outline-offset: -2px;
+    }
+  }
+
+  input {
+    width: 50%;
+  }
+
+  textarea {
+    width: 90%;
+    background-color: #ffffd5;
+    resize: vertical;
+    max-height: 400px;
+    min-height: 100px;
+  }
+
+  select {
+    margin-left: 20px;
+    padding: 5px;
+    width: 100px;
+
+    &:focus {
+      outline: #acd5e0 solid 1px;
+      outline-offset: -2px;
+    }
+  }
+
+  label {
+    padding: 0 10px 10px 10px;
+
+    @media (min-width: 600px) {
+      padding: 0 30px 10px 30px;
+    }
+  }
+}
+
+.buttons {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+
+  @media (min-width: 600px) {
+    margin-left: 15px;
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+  align-self: flex-end;
+  padding: 10px 0;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #a1a1a1;
+  border: none;
+  width: 50px;
+
+  &:enabled {
+    background-color: #ffea63;
+    color: #0e0e0e;
+    box-shadow: 2px 2px 5px #bdbd00;
+  }
+
+  @media (min-width: 400px) {
+    width: 80px;
+  }
+
+  @media (min-width: 600px) {
+    width: 100px;
+  }
+}
+
+.button-back:enabled {
+  background-color: #d5f8f8;
+  box-shadow: 2px 2px 5px #73a0a1;
+}
+
+.button-delete:enabled {
+  background-color: #ff9999;
+  box-shadow: 2px 2px 5px #bb5757;
+}
