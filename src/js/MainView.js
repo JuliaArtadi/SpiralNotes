@@ -92,7 +92,7 @@ export const MainView = () => {
                         <aside className={"placeholder-nav"}> </aside>
                         <nav className={"side-nav"}>
                             <div className="side__element">
-                                <PickDate method={handleChangeDate}/>
+                                <PickDate method={handleChangeDate} date={date}/>
                                 <PhaseInfo date={date} method={handleChangePhase}/>
                             </div>
                         </nav>
@@ -107,7 +107,7 @@ export const MainView = () => {
             <HashRouter>
                 <Header/>
                 <section className="side__element">
-                    <PickDate method={handleChangeDate}/>
+                    <PickDate method={handleChangeDate} date={date}/>
                     <PhaseInfo date={date} method={handleChangePhase}/>
                 </section>
                 <main>

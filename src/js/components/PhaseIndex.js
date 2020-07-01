@@ -1,5 +1,3 @@
-import React from "react";
-
 export const PhaseIndex = (phase, date) => {
     const day = phase[date.getDate()];
     if (day.phaseName === "Nowy księżyc") {

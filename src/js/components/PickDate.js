@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import DatePicker from "react-datepicker/es";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 
-export const PickDate = ({method: changeGlobalDate}) => {
-    const [startDate, setStartDate] = useState(new Date());
-
+export const PickDate = ({method: changeGlobalDate, date}) => {
+    const [startDate, setStartDate] = useState(date);
+console.log(date);
     const handlePrevDay = () => {
         setStartDate(today => {
             let yesterday = new Date(today);
@@ -37,8 +37,22 @@ export const PickDate = ({method: changeGlobalDate}) => {
                     <DatePicker
                         className={"pick-date side-style"}
                         dateFormat="dd/MM/yyyy"
-                        selected={startDate}
+                        selected={date}
                         onChange={date => setStartDate(date)}
+                        showPopperArrow={false}
+                        todayButton="Wróć do dzisiaj"
+                        popperPlacement=""
+                        popperModifiers={{
+                            offset: {
+                                enabled: true,
+                                offset: "5px, 10px"
+                            },
+                            preventOverflow: {
+                                enabled: true,
+                                escapeWithReference: false,
+                                boundariesElement: "viewport"
+                            }
+                        }}
                     />
                     <button className={"date-arrow side-style"} onClick={handleNextDay}>{">"}</button>
                 </div>
