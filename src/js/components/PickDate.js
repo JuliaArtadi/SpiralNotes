@@ -4,7 +4,7 @@ import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 
 export const PickDate = ({method: changeGlobalDate, date}) => {
     const [startDate, setStartDate] = useState(date);
-console.log(date);
+
     const handlePrevDay = () => {
         setStartDate(today => {
             let yesterday = new Date(today);
