@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import DatePicker from "react-datepicker/es";
+import DatePicker from "react-datepicker/dist/react-datepicker";
 import "../../../node_modules/react-datepicker/dist/react-datepicker.css";
 
 export const PickDate = ({method: changeGlobalDate, date}) => {

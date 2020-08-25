@@ -20,11 +20,17 @@ Other features: add/delete/edit notes, choose a category, choose a date, see a m
 
 ## Setup
 
+Clone this repository to  the chosen directory on your computer using `git clone https://github.com/JuliaArtadi/SpiralNotes`
+
+Go to the cloned project directory using command `cd SpiralNotes`.
+
 To start SpiralNotes first install all dependencies with `npm i`.
 
-Then split your terminal window in half and run json-server with the command `json-server --watch src/database/db.json`.
+Then install json-server globally by running `npm i -g json-server`.
 
-In the other half run `npm start` to run the app in development mode and `y` to run the app on another port as json-server is already running on your default port.
+After all the dependencies are installed successfully run json-server with the command `json-server --watch src/database/db.json`.
+
+Open second terminal window and run `npm start` to run the app in development mode and `y` to run the app on another port as json-server is already running on your default port.
 
 Page should open automatically, if not, try to open http://localhost:3001/.
 
