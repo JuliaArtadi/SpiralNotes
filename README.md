@@ -15,7 +15,7 @@ Other features: add/delete/edit notes, choose a category, choose a date, see a m
 * Sass version: 4.14.1
 * JavaScript ES6
 * HTML 5
-* JSON server version: 0.16.1
+* Firebase
 * GIT
 
 
@@ -28,22 +28,15 @@ Go to the cloned project directory using command `cd SpiralNotes`.
 
 To start SpiralNotes first install all dependencies with `npm i`.
 
-Then install json-server globally by running `npm i -g json-server`.
+After all the dependencies are installed successfully  run `npm start` to run the app in development mode.
 
-After all the dependencies are installed successfully run json-server with the command 
-`json-server --watch src/database/db.json`.
-
-Open second terminal window and run `npm start` to run the app in development mode and `y` to run the app 
-on another port as json-server is already running on your default port.
-
-Page should open automatically, if not, try to open http://localhost:3001/.
+Page should open automatically, if not, try to open http://localhost:3000/.
 
 
 ## Further project development
 
 * Add Firebase Authentication
 * Add Firebase Hosting
-* Switch from json-server database to Cloud Firestore
 * Feature that will allow adding custom categories
 * Add week cycle option
 
