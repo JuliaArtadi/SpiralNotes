@@ -57,9 +57,7 @@ export const MainView = () => {
 
     useEffect(() => {
         notesList.getNotes(
-            data => {
-                setNotes(data)
-            },
+            data => setNotes(data),
             err => console.log(err))
     }, [])
 

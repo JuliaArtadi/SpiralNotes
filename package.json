@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "^7.15.5",
+    "firebase": "^7.24.0",
     "json-server": "^0.16.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
